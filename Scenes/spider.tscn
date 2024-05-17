@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://clewhn3pv7amu"]
+
+[ext_resource type="Texture2D" uid="uid://clfvvwy1gj1go" path="res://Sprites/spider/walk/кадр0000.png" id="1_2i852"]
+[ext_resource type="Texture2D" uid="uid://c4lamqc1fbogs" path="res://Sprites/spider/walk/кадр0001.png" id="2_t3exe"]
+[ext_resource type="Texture2D" uid="uid://dkunvkya3162p" path="res://Sprites/spider/walk/кадр0002.png" id="3_2ni8q"]
+[ext_resource type="Texture2D" uid="uid://dh40ct1pxosfv" path="res://Sprites/spider/walk/кадр0003.png" id="4_mwjop"]
+[ext_resource type="Texture2D" uid="uid://dqyv780kh87vs" path="res://Sprites/spider/walk/кадр0004.png" id="5_7bymf"]
+[ext_resource type="Script" path="res://Scripts/spider.gd" id="6_380ri"]
+[ext_resource type="Texture2D" uid="uid://bkeygwhc8w4ue" path="res://Sprites/PlayerAnimations/Idle/Armatureplayer_animtion0_0.png" id="7_j57dj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvffb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2i852")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t3exe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2ni8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwjop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7bymf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 13.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rph2v"]
+radius = 23.0
+height = 130.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3uvi"]
+radius = 29.0
+height = 156.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fwd3o"]
+b = Vector2(221, 0)
+
+[node name="Spider" type="CharacterBody2D"]
+script = ExtResource("6_380ri")
+metadata/_edit_vertical_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.263414, 0.263415)
+sprite_frames = SubResource("SpriteFrames_kvffb")
+animation = &"walk"
+frame = 3
+frame_progress = 0.961721
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rph2v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rph2v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h3uvi")
+
+[node name="jump_collider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jump_collider"]
+position = Vector2(0, -6)
+shape = SubResource("SegmentShape2D_fwd3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="jump_collider/CollisionShape2D"]
+visible = false
+position = Vector2(117, 1)
+rotation = 1.5708
+scale = Vector2(0.0788906, 0.735445)
+texture = ExtResource("7_j57dj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="jump_collider" to="." method="_on_jump_collider_body_entered"]

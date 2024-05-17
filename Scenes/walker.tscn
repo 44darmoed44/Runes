@@ -1,0 +1,171 @@
+[gd_scene load_steps=28 format=3 uid="uid://crj00ko6drs8"]
+
+[ext_resource type="Script" path="res://Scripts/walker.gd" id="1_a41s3"]
+[ext_resource type="Texture2D" uid="uid://bal4jbuai8tc3" path="res://Sprites/walker/idle/кадр0000.png" id="1_vtatf"]
+[ext_resource type="Texture2D" uid="uid://crh1wuym8dw5d" path="res://Sprites/walker/idle/кадр0001.png" id="2_dubd8"]
+[ext_resource type="Texture2D" uid="uid://c7vgl6yg8qjd8" path="res://Sprites/walker/idle/кадр0002.png" id="3_xuoo8"]
+[ext_resource type="Texture2D" uid="uid://ca0ex4xihwgkm" path="res://Sprites/walker/idle/кадр0003.png" id="4_ygpvq"]
+[ext_resource type="Texture2D" uid="uid://co5bamk3t6g2" path="res://Sprites/walker/idle/кадр0004.png" id="5_gwsrc"]
+[ext_resource type="Texture2D" uid="uid://b1swvq3ohlpgw" path="res://Sprites/walker/run/кадр0000.png" id="6_ekyom"]
+[ext_resource type="Texture2D" uid="uid://do3wii88te4fb" path="res://Sprites/walker/run/кадр0001.png" id="7_abjkm"]
+[ext_resource type="Texture2D" uid="uid://b3wmrt8m8be03" path="res://Sprites/walker/run/кадр0002.png" id="8_dh0uk"]
+[ext_resource type="Texture2D" uid="uid://ch0n20kmcdvht" path="res://Sprites/walker/run/кадр0003.png" id="9_me3bl"]
+[ext_resource type="Texture2D" uid="uid://o0yfjjtipem3" path="res://Sprites/walker/run/кадр0004.png" id="10_mwgfd"]
+[ext_resource type="Texture2D" uid="uid://cewvcgb6w3lkk" path="res://Sprites/walker/run/кадр0005.png" id="11_y33s0"]
+[ext_resource type="Texture2D" uid="uid://dqgbfu8fxpg03" path="res://Sprites/walker/run/кадр0006.png" id="12_1ok4x"]
+[ext_resource type="Texture2D" uid="uid://droevogmdbcaj" path="res://Sprites/walker/run/кадр0007.png" id="13_gr868"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44nl1"]
+radius = 8.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffmhu"]
+load_path = "res://.godot/imported/кадр0000.png-491b8214faade82f590ee735a4823f4d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wsk3t"]
+load_path = "res://.godot/imported/кадр0001.png-b28b332b7e909d577b083ee7a3a34eaa.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kiwdr"]
+load_path = "res://.godot/imported/кадр0002.png-43a39307b6a5503226d864fd50d124de.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvh1c"]
+load_path = "res://.godot/imported/кадр0003.png-4e8b55e2a1795a80935df65f09f1b5d5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fhjtf"]
+load_path = "res://.godot/imported/кадр0004.png-90323836e4fa719bd3dc665f93dcb6ad.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gb6o0"]
+load_path = "res://.godot/imported/кадр0005.png-5d1908fa594b02da2dc756b628e9d22d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fym6p"]
+load_path = "res://.godot/imported/кадр0006.png-adac74d1afaa30317ee0f7766f652d32.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24fyw"]
+load_path = "res://.godot/imported/кадр0007.png-36768b6200e4bd0b5abe1beae55483f3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cffi1"]
+load_path = "res://.godot/imported/кадр0008.png-79184241d1262bd7fab7e980f7bf3ee2.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f54em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vtatf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dubd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xuoo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ygpvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gwsrc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ekyom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_abjkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dh0uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_me3bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mwgfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y33s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1ok4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gr868")
+}],
+"loop": true,
+"name": &"run",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ffmhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_wsk3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_kiwdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_kvh1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_fhjtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gb6o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_fym6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_24fyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_cffi1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 13.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqj88"]
+radius = 36.0
+height = 200.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw2ux"]
+size = Vector2(181, 86)
+
+[node name="walker" type="CharacterBody2D" node_paths=PackedStringArray("trigger")]
+script = ExtResource("1_a41s3")
+trigger = NodePath("trigger")
+
+[node name="trigger" type="Node2D" parent="."]
+position = Vector2(0, -75)
+rotation = 1.5708
+
+[node name="trigger_area" type="Area2D" parent="trigger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger/trigger_area"]
+shape = SubResource("CircleShape2D_44nl1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_f54em")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fqj88")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.93315e-05, -16.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_uw2ux")
+
+[connection signal="body_entered" from="trigger/trigger_area" to="." method="_on_trigger_area_body_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
